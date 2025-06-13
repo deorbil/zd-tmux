@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+
+zt() {
+  __zdp_tmux "$@"
+}
