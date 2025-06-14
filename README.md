@@ -8,4 +8,10 @@ tmux plugin for [zd]
 zd plugin add tmux https://github.com/deorbil/zd-tmux.git
 ```
 
+## Usage
+
+```sh
+zt
+```
+
 [zd]: https://github.com/deorbil/zd
