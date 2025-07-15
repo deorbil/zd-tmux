@@ -9,12 +9,10 @@ __zdp_tmux() {
   local name
   name="$(basename -- "$dir" | tr . _)"
 
-  # Create new session if it doesn't exist
   if ! tmux has-session -t="$name" 2>/dev/null; then
     tmux new-session -s "$name" -c "$dir" -d
   fi
 
-  # Attach session or switch to session if already in tmux
   if [[ -n "$TMUX" ]]; then
     tmux switch-client -t="$name"
   else
