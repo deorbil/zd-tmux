@@ -1,0 +1,21 @@
+#!/usr/bin/env zsh
+
+__zdp_tmux() {
+  local dir
+  dir="$(__zd "$@")"
+
+  [[ -d "$dir" ]] || return
+
+  local name
+  name="$(basename -- "$dir" | tr . _)"
+
+  if ! tmux has-session -t="$name" 2>/dev/null; then
+    tmux new-session -s "$name" -c "$dir" -d
+  fi
+
+  if [[ -n "$TMUX" ]]; then
+    tmux switch-client -t="$name"
+  else
+    tmux attach-session -t="$name"
+  fi
+}
