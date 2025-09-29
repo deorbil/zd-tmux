@@ -1,5 +1,3 @@
-#!/usr/bin/env zsh
-
 __zdp_tmux() {
   local dir
   dir="$(__zd "$@")"
@@ -18,4 +16,8 @@ __zdp_tmux() {
   else
     tmux attach-session -t="$name"
   fi
+}
+
+zt() {
+  __zdp_tmux "$@"
 }
