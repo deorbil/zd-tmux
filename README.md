@@ -5,7 +5,7 @@ tmux plugin for [zd]
 ## Installation
 
 ```sh
-zd plugin add tmux https://github.com/deorbil/zd-tmux.git
+zd plugin uninstall deorbil/zd-tmux
 ```
 
 ## Usage
